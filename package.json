@@ -38,7 +38,7 @@
         "@joplin/turndown-plugin-gfm": "^1.0.62",
         "@sec-ant/gm-fetch": "^1.2.3",
         "remeda": "^2.21.5",
-        "svelte-sonner": "^0.3.28",
+        "svelte-sonner": "^1.0.1",
         "turndown": "^7.2.0"
     },
     "pnpm": {

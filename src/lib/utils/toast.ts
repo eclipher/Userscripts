@@ -1,6 +1,6 @@
 import { toast as sonner, Toaster } from "svelte-sonner";
 import { CONFIG } from "../config";
-import type { ComponentType } from "svelte";
+import type { Component } from "svelte";
 
 const messageToastTypes = [
     "success",
@@ -11,7 +11,7 @@ const messageToastTypes = [
     "loading",
 ];
 
-function addPrefix(message: string | ComponentType): string | ComponentType {
+function addPrefix(message: string | Component): string | Component {
     if (typeof message === "string") {
         return `${CONFIG.APP_NAME}: ${message}`;
     }
@@ -35,7 +35,7 @@ const prefixToast = new Proxy(sonner, {
             typeof originalProp === "function" &&
             messageToastTypes.includes(prop.toString())
         ) {
-            return function (...args: any[]) {
+            return (...args: Parameters<typeof sonner>) => {
                 if (args.length > 0) {
                     args[0] = addPrefix(args[0]);
                 }
