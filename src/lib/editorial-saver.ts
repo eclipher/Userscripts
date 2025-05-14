@@ -186,24 +186,21 @@ export async function downloadEditorial(
     editorialFinder: () => Promise<HTMLDivElement>,
     titleFinder: () => Promise<string>,
 ) {
-    const toastId = toast.loading("Scraping editorial...");
-    try {
-        const editorialEl = await editorialFinder();
-        const editorial = await scrapeEditorial(editorialEl);
-        const title = await titleFinder();
+    toast.promise(
+        async () => {
+            const editorialEl = await editorialFinder();
+            const editorial = await scrapeEditorial(editorialEl);
+            const title = await titleFinder();
 
-        const blob = new Blob([`# ${title}\n\n`, editorial], {
-            type: "text/markdown; charset=UTF-8",
-        });
-        downloadFile(blob, title, "md");
-        toast.success("Editorial scraped. Downloading...", {
-            id: toastId,
-        });
-    } catch (err) {
-        console.error(err);
-        toast.error(
-            "Something went wrong while scraping. See browser console for more detail.",
-            { id: toastId },
-        );
-    }
+            const blob = new Blob([`# ${title}\n\n`, editorial], {
+                type: "text/markdown; charset=UTF-8",
+            });
+            downloadFile(blob, title, "md");
+        },
+        {
+            loading: "Scraping editorial...",
+            success: "Editorial scraped. Downloading...",
+            error: "Something went wrong while scraping. See browser console for more detail.",
+        },
+    );
 }

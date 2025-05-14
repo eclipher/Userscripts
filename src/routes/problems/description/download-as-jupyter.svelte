@@ -5,35 +5,32 @@
     import { getTitle } from "./copy-title.svelte";
     import { globalState } from "$lib/state";
     import { problemState } from "../state";
-    import { toast } from "svelte-sonner";
+    import { toast } from "$lib/utils/toast";
 
     async function saveAsJupyter() {
-        async function scrape() {
-            const title = await getTitle();
-            const notebook = createNotebook({
-                title: title,
-                description: await getDescription(),
-                code: problemState.editor?.getModel()?.getValue() ?? "",
-                language:
-                    problemState.editor?.getModel()?.getLanguageId() ??
-                    "python",
-                url: window.location.href,
-            });
-            return { notebook, title };
-        }
-        toast.promise(scrape, {
-            loading: "Scraping problem description and code...",
-
-            success: ({ notebook, title }) => {
-                downloadNotebook(notebook, title);
-                return "Start downloading jupyter notebook..";
-            },
-            error: "Something went wrong.",
+        const title = await getTitle();
+        const notebook = createNotebook({
+            title: title,
+            description: await getDescription(),
+            code: problemState.editor?.getModel()?.getValue() ?? "",
+            language:
+                problemState.editor?.getModel()?.getLanguageId() ?? "python",
+            url: window.location.href,
         });
+        downloadNotebook(notebook, title);
     }
 </script>
 
-<Button variant="orange" onclick={saveAsJupyter}>
+<Button
+    variant="orange"
+    onclick={() => {
+        toast.promise(saveAsJupyter(), {
+            loading: "Scraping problem description and code...",
+            success: "Start downloading jupyter notebook...",
+            error: "Something went wrong while scraping. See browser console for more detail.",
+        });
+    }}
+>
     {globalState.site === "cn"
         ? "保存为 Jupyter Notebook (.ipynb)"
         : "Save as Jupyter Notebook (.ipynb)"}

@@ -43,6 +43,31 @@ const prefixToast = new Proxy(sonner, {
             };
         }
 
+        // Handle toast.promise specifically
+        if (prop === "promise") {
+            return <T>(...args: Parameters<typeof sonner.promise<T>>) => {
+                const [promise, data] = args;
+                if (!data) return originalProp;
+
+                const prefixedData = {
+                    ...data,
+                    loading:
+                        typeof data.loading === "string"
+                            ? addPrefix(data.loading)
+                            : data.loading,
+                    success:
+                        typeof data.success === "string"
+                            ? addPrefix(data.success)
+                            : data.success,
+                    error:
+                        typeof data.error === "string"
+                            ? addPrefix(data.error)
+                            : data.error,
+                };
+                return originalProp.call(this, promise, prefixedData);
+            };
+        }
+
         // Return other properties/methods unchanged
         return originalProp;
     },
