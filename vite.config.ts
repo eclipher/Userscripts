@@ -10,6 +10,7 @@ export default defineConfig({
         monkey({
             entry: "src/main.ts",
             userscript: {
+                // version is fetched from package.json
                 name: {
                     "": "LeetCode Toolkit",
                     "zh-CN": "LeetCode工具箱",
@@ -32,7 +33,6 @@ export default defineConfig({
                     "*://leetcode.com/problems/*/post-solution/*",
                     "*://leetcode.cn/problems/*/post-solution/*", // untested
                 ],
-                version: "2.5.4",
                 license: "MIT",
                 icon: "https://www.google.com/s2/favicons?sz=64&domain=leetcode.com",
                 resource: {
