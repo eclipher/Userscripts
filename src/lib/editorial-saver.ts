@@ -196,17 +196,8 @@ export async function downloadEditorial(
             type: "text/markdown; charset=UTF-8",
         });
         downloadFile(blob, title, "md");
-        toast.success("Editorial scraped. Downloading now...", {
+        toast.success("Editorial scraped. Downloading...", {
             id: toastId,
-            action: {
-                label: "Read it now",
-                onClick: () => {
-                    window.open(
-                        "https://leetcode-editorial-reader.vercel.app/",
-                        "_blank",
-                    );
-                },
-            },
         });
     } catch (err) {
         console.error(err);

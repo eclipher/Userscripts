@@ -1,6 +1,6 @@
 import { findElement } from "$lib/utils/elementFinder";
 import { mount } from "svelte";
-import SaveExploreArticle from "./save-explore-article.svelte";
+import ExploreButtons from "./ExploreButtons.svelte";
 
 async function main() {
     const toolbar = await findElement("div.left-side", { timeout: 0 });
@@ -8,7 +8,7 @@ async function main() {
     const container = document.createElement("div");
     container.style.cssText = "display: contents;";
     toolbar.append(container);
-    mount(SaveExploreArticle, {
+    mount(ExploreButtons, {
         target: container,
     });
 }

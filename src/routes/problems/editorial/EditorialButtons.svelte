@@ -1,15 +1,13 @@
 <script>
+    import ButtonGroup from "$lib/components/ButtonGroup.svelte";
+
     import FindEditorialScreenshot from "./find-editorial-screenshot.svelte";
     import SaveEditorial from "./save-editorial.svelte";
+    import ReadSavedEditorial from "$lib/read-saved-editorial.svelte";
 </script>
 
-<div class="relative p-2">
+<ButtonGroup style="z-index: 10; position:relative; padding: 0.5rem">
     <FindEditorialScreenshot />
     <SaveEditorial />
-</div>
-
-<style>
-    div {
-        z-index: 10;
-    }
-</style>
+    <ReadSavedEditorial />
+</ButtonGroup>

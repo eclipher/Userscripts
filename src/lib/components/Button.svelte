@@ -1,21 +1,29 @@
 <!-- @component
 design adapted from https://uiverse.io/krlozCJ/blue-dodo-17
 
-if `onclick` handler is async, the button will display a loader icon until the promise is resolved
+if passes `href`, will render as an anchor tag.
+
+if `onclick` handler is async, the button will display a loader icon until the promise is resolved.
  -->
 
 <script lang="ts">
     import { isPromise } from "remeda";
-    import type { HTMLButtonAttributes } from "svelte/elements";
+    import type {
+        HTMLButtonAttributes,
+        HTMLAnchorAttributes,
+    } from "svelte/elements";
+
     let {
         onclick,
         children,
         variant = "purple",
         type = "button",
+        href,
         ...restProps
-    }: HTMLButtonAttributes & {
-        variant?: keyof typeof variants;
-    } = $props();
+    }: HTMLButtonAttributes &
+        HTMLAnchorAttributes & {
+            variant?: keyof typeof variants;
+        } = $props();
 
     const variants = {
         purple: "--bg: #6c5ce7; --shadow: #a29bfe",
@@ -38,18 +46,24 @@ if `onclick` handler is async, the button will display a loader icon until the p
     }
 </script>
 
-<button
-    {type}
-    style={variants[variant]}
-    disabled={loading}
-    onclick={handleOnClick}
-    {...restProps}
->
-    {#if loading}
-        {@render loaderIcon()}
-    {/if}
-    {@render children?.()}
-</button>
+{#if href}
+    <a style={variants[variant]} {href} target="_blank" {...restProps}>
+        {@render children?.()}
+    </a>
+{:else}
+    <button
+        style={variants[variant]}
+        {type}
+        disabled={loading}
+        onclick={handleOnClick}
+        {...restProps}
+    >
+        {#if loading}
+            {@render loaderIcon()}
+        {/if}
+        {@render children?.()}
+    </button>
+{/if}
 
 {#snippet loaderIcon()}
     <!-- animate-spin is using tailwind class from leetcode site -->
@@ -72,7 +86,8 @@ if `onclick` handler is async, the button will display a loader icon until the p
 {/snippet}
 
 <style>
-    button {
+    button,
+    a {
         color: #fff;
         background-color: var(--bg, #6c5ce7);
         box-shadow: 0px 3px 0px 0px var(--shadow, #a29bfe);
@@ -85,15 +100,15 @@ if `onclick` handler is async, the button will display a loader icon until the p
         align-items: center;
         gap: 0.25rem;
         user-select: none;
-    }
 
-    button:active {
-        transform: translateY(3px);
-        box-shadow: 0px 0px 0px 0px var(--shadow, #a29bfe);
-    }
+        &:active {
+            transform: translateY(3px);
+            box-shadow: 0px 0px 0px 0px var(--shadow, #a29bfe);
+        }
 
-    button:disabled {
-        pointer-events: none;
-        opacity: 50%;
+        &:disabled {
+            pointer-events: none;
+            opacity: 50%;
+        }
     }
 </style>
