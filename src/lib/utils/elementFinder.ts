@@ -29,7 +29,7 @@ export function find<T>(
         },
         timeout = 5000,
         itemName = "Item",
-    }: Partial<FinderConfig>
+    }: Partial<FinderConfig>,
 ) {
     return new Promise<T>((resolve, reject) => {
         // If the element is already present, resolve immediately
@@ -55,7 +55,7 @@ export function find<T>(
             timeoutId = setTimeout(() => {
                 observer.disconnect();
                 toast.error(
-                    `${itemName} not found within timeout. Please refresh the page or disable the script.`
+                    `${itemName} not found within timeout. Please refresh the page or disable the script.`,
                 );
                 const error = new TimeoutError(itemName, timeout);
                 console.error(error);
@@ -75,7 +75,7 @@ export async function findElement<T extends Element>(
         parent?: Document | Element;
         timeout?: number;
         additionalRule?: (el: T) => boolean;
-    } = {}
+    } = {},
 ): Promise<T> {
     const element = await find<T>(
         () => {
@@ -92,7 +92,7 @@ export async function findElement<T extends Element>(
             subject: parent,
             timeout,
             itemName: `Element ${selector}`,
-        }
+        },
     );
     return element;
 }

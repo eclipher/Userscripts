@@ -10,7 +10,7 @@ export async function copy(text: string, toastId?: string | number) {
                 : "Copied to clipboard!",
             {
                 id: toastId, // update an already present toast, if given the id of that toast
-            }
+            },
         );
     } catch (err) {
         if (err instanceof Error) {
