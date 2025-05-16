@@ -79,7 +79,7 @@ export async function findElement<T extends Element>(
 ): Promise<T> {
     const element = await find<T>(
         () => {
-            const el = parent.querySelector(selector) as T | null;
+            const el = parent.querySelector<T>(selector);
             if (additionalRule && el) {
                 // if the found element does not meet the rule,
                 // return `null` so the finder will proceed as if not found
