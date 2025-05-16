@@ -161,6 +161,18 @@ turndown.addRule("save-slides", {
     },
 });
 
+turndown.addRule("save-details-as-is", {
+    filter: ["details"],
+    replacement: (_content, node) => {
+        const { children } = node as HTMLDetailsElement;
+
+        [...children].forEach((child) => {
+            if (!child.textContent) node.removeChild(child); // filter out empty paragraphs
+        });
+        return (node as HTMLDetailsElement).outerHTML;
+    },
+});
+
 // skip element that has "data-skip-me-turndown" label
 turndown.remove(
     (node) => node.getAttribute("data-skip-me-turndown") === "true",
