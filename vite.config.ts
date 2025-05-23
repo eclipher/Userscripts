@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
-import monkey from "vite-plugin-monkey";
+import monkey, { cdn } from "vite-plugin-monkey";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
@@ -9,6 +9,15 @@ export default defineConfig({
         tsconfigPaths(),
         monkey({
             entry: "src/main.ts",
+            build: {
+                externalGlobals: {
+                    compressorjs: cdn.jsdelivr("Compressor"),
+                    turndown: cdn.jsdelivr(
+                        "TurndownService",
+                        "lib/turndown.browser.umd.js",
+                    ),
+                },
+            },
             userscript: {
                 // version is fetched from package.json
                 name: {
