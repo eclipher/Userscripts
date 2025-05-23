@@ -1,7 +1,7 @@
 import { toast } from "./toast";
 import { globalState } from "../state";
 
-export async function copy(text: string, toastId?: string | number) {
+export async function copy(text: string, toastId?: string) {
     try {
         await navigator.clipboard.writeText(text);
         toast.success(

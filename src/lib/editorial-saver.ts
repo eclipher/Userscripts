@@ -199,7 +199,7 @@ export async function downloadEditorial(
     titleFinder: () => Promise<string>,
 ) {
     toast.promise(
-        async () => {
+        (async () => {
             const editorialEl = await editorialFinder();
             const editorial = await scrapeEditorial(editorialEl);
             const title = await titleFinder();
@@ -208,7 +208,7 @@ export async function downloadEditorial(
                 type: "text/markdown; charset=UTF-8",
             });
             downloadFile(blob, title, "md");
-        },
+        })(), // svelte-french-toast.promise() doesn't support `()=> Promise` as argument, have to use IIFE here
         {
             loading: "Scraping editorial...",
             success: "Editorial scraped. Downloading...",

@@ -1,7 +1,7 @@
 <script lang="ts">
     import Button from "$lib/components/Button.svelte";
     import { getTitle } from "../description/copy-title.svelte";
-    import { toast } from "svelte-sonner";
+    import { toast } from "$lib/utils/toast";
 
     import { GM_getResourceText } from "$";
     const editorialsMarkdown = GM_getResourceText("editorials");
@@ -34,9 +34,7 @@
         if (link) {
             window.open(link, "_blank");
         } else {
-            toast.warning(
-                `Editorial screenshot not found for problem: ${title}`,
-            );
+            toast.error(`Editorial screenshot not found for problem: ${title}`);
         }
     }
 </script>

@@ -20,9 +20,9 @@ importers:
       remeda:
         specifier: ^2.21.5
         version: 2.21.5
-      svelte-sonner:
-        specifier: ^1.0.1
-        version: 1.0.1(svelte@5.28.6)
+      svelte-french-toast:
+        specifier: ^2.0.0-alpha.0
+        version: 2.0.0-alpha.0(svelte@5.28.6)
       turndown:
         specifier: ^7.2.0
         version: 7.2.0
@@ -1374,11 +1374,6 @@ packages:
   run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
 
-  runed@0.26.0:
-    resolution: {integrity: sha512-qWFv0cvLVRd8pdl/AslqzvtQyEn5KaIugEernwg9G98uJVSZcs/ygvPBvF80LA46V8pwRvSKnaVLDI3+i2wubw==}
-    peerDependencies:
-      svelte: ^5.7.0
-
   sade@1.8.1:
     resolution: {integrity: sha512-xal3CZX1Xlo/k4ApwCFrHVACi9fBqJ7V+mwhBsuf/1IOKbBy098Fex+Wa/5QMubw09pSZ/u8EY8PWgevJsXp1A==}
     engines: {node: '>=6'}
@@ -1462,10 +1457,15 @@ packages:
       svelte:
         optional: true
 
-  svelte-sonner@1.0.1:
-    resolution: {integrity: sha512-vz0eqcs9GNnJ2CTtTno7v/jSA0P3r+X+3y/hrJg+FPpB2rZCFywIKNKD3wiRI8449i3LXVcgQ+q5R5ocOd6ydA==}
+  svelte-french-toast@2.0.0-alpha.0:
+    resolution: {integrity: sha512-81wcVaY9UZ/0JuzLEizMSoIXqNbX7yhfTZavBuw94T3cnT2HmJ9O+qXY/c91h9FkeMwboo0KHZVmzOEQVTXDFg==}
     peerDependencies:
       svelte: ^5.0.0
+
+  svelte-writable-derived@3.1.1:
+    resolution: {integrity: sha512-w4LR6/bYZEuCs7SGr+M54oipk/UQKtiMadyOhW0PTwAtJ/Ai12QS77sLngEcfBx2q4H8ZBQucc9ktSA5sUGZWw==}
+    peerDependencies:
+      svelte: ^3.2.1 || ^4.0.0-next.1 || ^5.0.0-next.94
 
   svelte@5.28.6:
     resolution: {integrity: sha512-9qqr7mw8YR9PAnxGFfzCK6PUlNGtns7wVavrhnxyf3fpB1mP/Ol55Z2UnIapsSzNNl3k9qw7cZ22PdE8+xT/jQ==}
@@ -2839,11 +2839,6 @@ snapshots:
     dependencies:
       queue-microtask: 1.2.3
 
-  runed@0.26.0(svelte@5.28.6):
-    dependencies:
-      esm-env: 1.2.2
-      svelte: 5.28.6
-
   sade@1.8.1:
     dependencies:
       mri: 1.2.0
@@ -2948,9 +2943,13 @@ snapshots:
     optionalDependencies:
       svelte: 5.28.6
 
-  svelte-sonner@1.0.1(svelte@5.28.6):
+  svelte-french-toast@2.0.0-alpha.0(svelte@5.28.6):
     dependencies:
-      runed: 0.26.0(svelte@5.28.6)
+      svelte: 5.28.6
+      svelte-writable-derived: 3.1.1(svelte@5.28.6)
+
+  svelte-writable-derived@3.1.1(svelte@5.28.6):
+    dependencies:
       svelte: 5.28.6
 
   svelte@5.28.6:

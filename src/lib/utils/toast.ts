@@ -1,15 +1,9 @@
-import { toast as sonner, Toaster } from "svelte-sonner";
+import toastOriginal, { Toaster } from "svelte-french-toast";
+
 import { CONFIG } from "../config";
 import type { Component } from "svelte";
 
-const messageToastTypes = [
-    "success",
-    "info",
-    "warning",
-    "error",
-    "message",
-    "loading",
-];
+const messageToastTypes = ["error", "success", "loading", "info"];
 
 function addPrefix(message: string | Component): string | Component {
     if (typeof message === "string") {
@@ -18,7 +12,7 @@ function addPrefix(message: string | Component): string | Component {
     return message;
 }
 
-const prefixToast = new Proxy(sonner, {
+const prefixToast = new Proxy(toastOriginal, {
     // Handle direct function calls: toast('message')
     apply(target, thisArg, args) {
         if (args.length > 0) {
@@ -35,8 +29,8 @@ const prefixToast = new Proxy(sonner, {
             typeof originalProp === "function" &&
             messageToastTypes.includes(prop.toString())
         ) {
-            return (...args: Parameters<typeof sonner>) => {
-                if (args.length > 0) {
+            return (...args: Parameters<typeof toastOriginal>) => {
+                if (args.length > 0 && typeof args[0] === "string") {
                     args[0] = addPrefix(args[0]);
                 }
                 return originalProp.apply(this, args);
@@ -45,7 +39,9 @@ const prefixToast = new Proxy(sonner, {
 
         // Handle toast.promise specifically
         if (prop === "promise") {
-            return <T>(...args: Parameters<typeof sonner.promise<T>>) => {
+            return <T>(
+                ...args: Parameters<typeof toastOriginal.promise<T>>
+            ) => {
                 const [promise, data] = args;
                 if (!data) return originalProp;
 

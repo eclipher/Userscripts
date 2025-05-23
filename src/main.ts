@@ -6,7 +6,7 @@ import { explorePage } from "./routes/explore";
 
 mount(Toaster, {
     target: document.body,
-    props: { richColors: true, position: "top-center" },
+    props: { position: "top-center" },
 });
 
 const url = window.location.href;
