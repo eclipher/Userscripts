@@ -96,8 +96,8 @@ LeetCode 编辑文章包含代码、幻灯片、视频、数学表达式等。�
 
 - **代码**将保存为多个不同语言的代码块。[LeetCode Editorial Reader](https://leetcode-editorial-reader.vercel.app/) 可以将它们显示为选项卡布局。
 - **幻灯片**将保存为一系列图像。[LeetCode Editorial Reader](https://leetcode-editorial-reader.vercel.app/) 可以将它们以真正的幻灯片布局展示。
-- 说到图像，它们将保存为 Base64 编码的字符串，这意味着它们直接位于 Markdown 中，不会出现“找不到图像”的风险。 （但这也会使文件更大。）
-- 数学表达式已保存，但你可能需要兼容的查看器，例如 VS Code 或 [LeetCode Editorial Reader](https://leetcode-editorial-reader.vercel.app/) 才能正确呈现它们。
+- 说到图像，它们将在压缩后保存为 Base64 编码的字符串，这意味着它们直接位于 Markdown 中，不会出现“找不到图像”的风险。 （但这也会使文件更大。）
+- 数学表达式会被保存，但你可能需要兼容的查看器，例如 VS Code 或 [LeetCode Editorial Reader](https://leetcode-editorial-reader.vercel.app/) 才能正确呈现它们。
 - 视频**不会**被保存。
 
 ## 关于 Jupyter Notebook

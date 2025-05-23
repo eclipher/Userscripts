@@ -1,4 +1,5 @@
 import gmFetch from "@sec-ant/gm-fetch";
+import { compressImage } from "./compress-image";
 
 function blobToDataURL(blob: Blob): Promise<string> {
     return new Promise((resolve, reject) => {
@@ -24,7 +25,8 @@ export async function convertSrcToDataURL(src: string) {
     try {
         const response = await gmFetch(src); // cannot use native fetch because of CORS issues
         const blob = await response.blob();
-        const dataURL = await blobToDataURL(blob);
+        const compressed = await compressImage(blob);
+        const dataURL = await blobToDataURL(compressed);
         return dataURL;
     } catch (err) {
         console.error(`Failed to fetch image: ${src}`, err);

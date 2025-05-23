@@ -44,7 +44,7 @@ This userscript enhances the LeetCode with various tweaking and additions. It su
 
 - **Save Article as Markdown(\*)**: Scrape and download an Explore Card article as markdown file. See [About Editorial Scraping](#about-editorial-scraping) section for more detail.
 
-> (\*) These features are for US site only.\*\*
+> (\*) These features are for US site only.
 
 ## Screenshots
 
@@ -94,10 +94,10 @@ LeetCode editorial articles contains codes, slides, videos, math expressions and
 A few things to notice:
 
 - **Codes**: will be saved as multiple code blocks in different languages. [LeetCode Editorial Reader](https://leetcode-editorial-reader.vercel.app/) can display them in tab layout.
-- **Slides** are saved as a series of images. [LeetCode Editorial Reader](https://leetcode-editorial-reader.vercel.app/) can display them in true slide layout.
-- Speaking of **images**, they are saved as Base64-encoded string, which means they are directly inside the markdown without the risk of "image not found". (This also makes the file larger though.)
-- **Math** expressions are saved, but you may need compatible viewers such as VS Code or [LeetCode Editorial Reader](https://leetcode-editorial-reader.vercel.app/) to render them correctly.
-- Videos **are not** saved. That's a headache I don't want to deal with.
+- **Slides** will be saved as a series of images. [LeetCode Editorial Reader](https://leetcode-editorial-reader.vercel.app/) can display them in true slide layout.
+- Speaking of **images**, they will be compressed and saved as Base64-encoded string, which means they will be directly inside the markdown file without the risk of "image not found". (This also makes the file larger though.)
+- **Math** expressions will be saved, but you may need compatible viewers such as VS Code or [LeetCode Editorial Reader](https://leetcode-editorial-reader.vercel.app/) to render them correctly.
+- Videos **will not be** saved. That's a headache I don't want to deal with.
 
 ## About Jupyter Notebook
 
