@@ -13,7 +13,7 @@ const url = window.location.href;
 
 const problemPageRegex =
     /https?:\/\/leetcode\.com\/problems\/.*|https?:\/\/leetcode\.cn\/problems\/.*/;
-const explorePageRegex = /https?:\/\/leetcode\.com\/explore\/learn\/card\/.*/;
+const explorePageRegex = /https?:\/\/leetcode\.com\/explore\/.*\/card\/.*/;
 
 if (problemPageRegex.test(url)) {
     problemPage();

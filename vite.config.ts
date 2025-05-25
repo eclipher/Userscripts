@@ -35,7 +35,7 @@ export default defineConfig({
                 include: [
                     /https?:\/\/leetcode\.com\/problems\/.*/,
                     /https?:\/\/leetcode\.cn\/problems\/.*/,
-                    /https?:\/\/leetcode\.com\/explore\/learn\/card\/.*/,
+                    /https?:\/\/leetcode\.com\/explore\/.*\/card\/.*/,
                 ],
                 // don't activate script on solution submission page
                 exclude: [
