@@ -24,12 +24,16 @@ export async function convertSrcToDataURL(src: string) {
 
     try {
         const response = await gmFetch(src); // cannot use native fetch because of CORS issues
-        const blob = await response.blob();
-        const compressed = await compressImage(blob);
-        const dataURL = await blobToDataURL(compressed);
+        let blob = await response.blob();
+
+        const incompressableTypes = ["image/gif", "image/svg+xml"];
+        if (!incompressableTypes.includes(blob.type)) {
+            blob = await compressImage(blob);
+        }
+        const dataURL = await blobToDataURL(blob);
         return dataURL;
     } catch (err) {
-        console.error(`Failed to fetch image: ${src}`, err);
+        console.error(`Failed to convert image: ${src}`, err);
         throw err;
     }
 }
