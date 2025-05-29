@@ -1,9 +1,11 @@
-name: create new release
+name: create new release for Leetcode-Toolkit
 
 on:
     push:
+        branches:
+            - main
         tags:
-            - "v*"
+            - "leetcode-v*"
 jobs:
     release:
         name: "Release"
@@ -36,10 +38,11 @@ jobs:
               run: pnpm install
 
             - name: Build
-              run: pnpm build
+              run: pnpm -F leetcode-toolkit build
 
             - name: Check build output
               run: |
+                  cd userscripts/leetcode-toolkit
                   if [ ! -d "dist" ] || [ -z "$(ls -A dist)" ]; then
                     echo "Build output directory is empty or doesn't exist"
                     exit 1
@@ -49,5 +52,7 @@ jobs:
               if: success()
               uses: ncipollo/release-action@v1
               with:
-                  artifacts: dist/*
+                  artifacts: userscripts/leetcode-toolkit/dist/*
                   generateReleaseNotes: true
+                  allowUpdates: true
+                  artifactErrorsFailBuild: true
