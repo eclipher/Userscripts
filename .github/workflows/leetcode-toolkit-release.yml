@@ -1,0 +1,58 @@
+name: create new release for Leetcode-Toolkit
+
+on:
+    push:
+        branches:
+            - main
+        tags:
+            - "leetcode-v*"
+jobs:
+    release:
+        name: "Release"
+
+        permissions:
+            contents: write
+
+        runs-on: "ubuntu-latest"
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+
+            - name: Install pnpm
+              uses: pnpm/action-setup@v4
+              id: pnpm-install
+              with:
+                  version: 10
+                  run_install: false
+
+            - name: Setup node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 22
+                  cache: pnpm
+
+            - name: Install dependencies
+              run: pnpm install
+
+            - name: Build
+              run: pnpm -F leetcode-toolkit build
+
+            - name: Check build output
+              run: |
+                  cd userscripts/leetcode-toolkit
+                  if [ ! -d "dist" ] || [ -z "$(ls -A dist)" ]; then
+                    echo "Build output directory is empty or doesn't exist"
+                    exit 1
+                  fi
+
+            - name: Create Release
+              if: success()
+              uses: ncipollo/release-action@v1
+              with:
+                  artifacts: userscripts/leetcode-toolkit/dist/*
+                  generateReleaseNotes: true
+                  allowUpdates: true
+                  artifactErrorsFailBuild: true
