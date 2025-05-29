@@ -15,17 +15,17 @@
         "@jupyterlab/nbformat": "^4.4.2",
         "@sveltejs/vite-plugin-svelte": "^5.0.3",
         "monaco-editor": "^0.52.2",
-        "svelte": "^5.28.6",
+        "svelte": "^5.33.7",
         "svelte-check": "^4.1.7",
         "vite": "^6.3.5",
         "vite-plugin-monkey": "^5.0.8",
         "vite-tsconfig-paths": "^5.1.4"
     },
     "dependencies": {
-        "@userscripts/utils": "workspace:*",
         "@userscripts/components": "workspace:*",
+        "@userscripts/utils": "workspace:*",
         "compressorjs": "^1.2.1",
-        "remeda": "^2.21.5",
+        "remeda": "^2.22.3",
         "turndown": "^7.2.0"
     }
 }
