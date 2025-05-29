@@ -2,8 +2,6 @@ name: create new release for Leetcode-Toolkit
 
 on:
     push:
-        branches:
-            - main
         tags:
             - "leetcode-v*"
 jobs:
