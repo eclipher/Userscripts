@@ -1,0 +1,14 @@
+{
+    "name": "@userscripts/components",
+    "private": true,
+    "main": "src/index.ts",
+    "exports": {
+        ".": "./src/index.ts"
+    },
+    "devDependencies": {
+        "svelte": "^5.33.6"
+    },
+    "dependencies": {
+        "remeda": "^2.22.3"
+    }
+}

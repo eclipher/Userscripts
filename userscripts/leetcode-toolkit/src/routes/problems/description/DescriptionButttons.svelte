@@ -1,5 +1,5 @@
 <script lang="ts">
-    import ButtonGroup from "$lib/components/ButtonGroup.svelte";
+    import ButtonGroup from "$components/ButtonGroup.svelte";
 
     import CopyTitle from "./copy-title.svelte";
     import CopyDescription from "./copy-description.svelte";

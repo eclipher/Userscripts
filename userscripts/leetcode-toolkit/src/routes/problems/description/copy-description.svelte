@@ -8,15 +8,15 @@
 </script>
 
 <script lang="ts">
-    import Button from "$lib/components/Button.svelte";
-    import { copy } from "@userscripts/utils/src/copy";
-    import { findElement } from "@userscripts/utils/src/elementFinder";
-    import { htmlToMd } from "@userscripts/utils/src/htmlToMd";
+    import Button from "$components/Button.svelte";
+    import { copyText } from "$utils/copy";
+    import { findElement } from "$utils/elementFinder";
+    import { htmlToMd } from "$utils/htmlToMd";
     import { globalState } from "$lib/state";
 
     async function copyDescription() {
         const desc = await getDescription(false);
-        copy(desc);
+        copyText(desc);
     }
 </script>
 

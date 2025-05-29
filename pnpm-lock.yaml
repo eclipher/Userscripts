@@ -45,6 +45,16 @@ importers:
         specifier: ^8.33.0
         version: 8.33.0(eslint@9.27.0)(typescript@5.8.3)
 
+  packages/components:
+    dependencies:
+      remeda:
+        specifier: ^2.22.3
+        version: 2.22.3
+    devDependencies:
+      svelte:
+        specifier: ^5.33.6
+        version: 5.33.6
+
   packages/utils:
     dependencies:
       '@joplin/turndown-plugin-gfm':
@@ -69,6 +79,9 @@ importers:
 
   userscripts/leetcode-toolkit:
     dependencies:
+      '@userscripts/components':
+        specifier: workspace:*
+        version: link:../../packages/components
       '@userscripts/utils':
         specifier: workspace:*
         version: link:../../packages/utils
