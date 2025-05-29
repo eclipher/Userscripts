@@ -20,5 +20,4 @@
     }
 </script>
 
-<!-- nowcoder hijacks `addEventListener` for click event, so `onclick` won't work. I don't know if this comes from some ancient package or their devs are fucking maniac. Use `onpointerdown` here can work, but error still emits. -->
-<Button variant="green" onpointerdown={copyDescription}>复制描述</Button>
+<Button variant="green" onclick={copyDescription}>复制描述</Button>
