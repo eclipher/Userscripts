@@ -1,0 +1,26 @@
+{
+    "name": "nowcoder-toolkit",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "check": "svelte-check --tsconfig ./tsconfig.json && tsc -p tsconfig.node.json"
+    },
+    "devDependencies": {
+        "@sveltejs/vite-plugin-svelte": "^5.0.3",
+        "svelte": "^5.33.7",
+        "svelte-check": "^4.1.1",
+        "vite": "^6.0.5",
+        "vite-plugin-monkey": "^5.0.8",
+        "vite-tsconfig-paths": "^5.1.4"
+    },
+    "dependencies": {
+        "@userscripts/components": "workspace:*",
+        "@userscripts/utils": "workspace:*",
+        "compressorjs": "^1.2.1",
+        "turndown": "^7.2.0"
+    }
+}

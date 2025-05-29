@@ -118,6 +118,19 @@ importers:
         version: 5.1.4(typescript@5.8.3)(vite@6.3.5)
 
   userscripts/nowcoder-toolkit:
+    dependencies:
+      '@userscripts/components':
+        specifier: workspace:*
+        version: link:../../packages/components
+      '@userscripts/utils':
+        specifier: workspace:*
+        version: link:../../packages/utils
+      compressorjs:
+        specifier: ^1.2.1
+        version: 1.2.1
+      turndown:
+        specifier: ^7.2.0
+        version: 7.2.0
     devDependencies:
       '@sveltejs/vite-plugin-svelte':
         specifier: ^5.0.3
