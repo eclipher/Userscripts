@@ -30,8 +30,10 @@ export default defineConfig({
                         "复制题目为 Markdown | 下载为 Jupyter Notebook | 保存时自动格式化 | 免费自动补全",
                 },
                 author: "eclipher",
+                // keep the old link, so userscript manager can know it's the same script and update correctly
                 namespace: "https://github.com/eclipher/leetcode-toolkit",
-                homepage: "https://github.com/eclipher/leetcode-toolkit",
+                homepage:
+                    "https://github.com/eclipher/Userscripts/tree/main/userscripts/leetcode-toolkit",
                 include: [
                     /https?:\/\/leetcode\.com\/problems\/.*/,
                     /https?:\/\/leetcode\.cn\/problems\/.*/,
