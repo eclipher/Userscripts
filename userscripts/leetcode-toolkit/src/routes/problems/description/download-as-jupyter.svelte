@@ -5,7 +5,7 @@
     import { getTitle } from "./copy-title.svelte";
     import { globalState } from "$lib/state";
     import { problemState } from "../state";
-    import { toast } from "$lib/utils/toast";
+    import { toast } from "$lib/toast";
 
     async function saveAsJupyter() {
         const title = await getTitle();

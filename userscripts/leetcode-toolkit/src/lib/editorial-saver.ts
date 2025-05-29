@@ -1,9 +1,13 @@
-import { simulateMouseClickReact } from "./utils/click";
-import { downloadFile } from "./utils/download-file";
-import { findElement } from "./utils/elementFinder";
-import { htmlToMd, createTurndownService } from "./utils/htmlToMd";
-import { toast } from "./utils/toast";
-import { convertSrcToDataURL } from "./utils/data-url";
+import { simulateMouseClickReact } from "@userscripts/utils/src/click";
+import { downloadFile } from "@userscripts/utils/src/download-file";
+import { findElement } from "@userscripts/utils/src/elementFinder";
+import {
+    htmlToMd,
+    createTurndownService,
+} from "@userscripts/utils/src/htmlToMd";
+import { convertSrcToDataURL } from "@userscripts/utils/src/data-url";
+
+import { toast } from "$lib/toast";
 
 const turndown = createTurndownService();
 // remove the link before section heading in LeetCode editorials

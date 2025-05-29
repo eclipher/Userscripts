@@ -1,0 +1,11 @@
+// tsconfig.base.json (in monorepo root)
+{
+    "extends": "@tsconfig/svelte/tsconfig.json",
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true
+        // "composite": true // Crucial for project references
+    }
+}

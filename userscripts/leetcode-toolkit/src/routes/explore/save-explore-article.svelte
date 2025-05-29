@@ -1,8 +1,8 @@
 <script lang="ts">
     import Button from "$lib/components/Button.svelte";
 
-    import { findElement } from "$lib/utils/elementFinder";
-    import { getElementIndex } from "$lib/utils/elementIndex";
+    import { findElement } from "@userscripts/utils/src/elementFinder";
+    import { getElementIndex } from "@userscripts/utils/src/elementIndex";
     import { downloadEditorial } from "$lib/editorial-saver";
 
     async function findExploreEditorial() {

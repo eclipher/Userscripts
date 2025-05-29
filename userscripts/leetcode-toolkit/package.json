@@ -12,39 +12,19 @@
         "format": "prettier --write ."
     },
     "devDependencies": {
-        "@eslint/compat": "^1.2.9",
-        "@eslint/js": "^9.26.0",
         "@jupyterlab/nbformat": "^4.4.2",
         "@sveltejs/vite-plugin-svelte": "^5.0.3",
-        "@tsconfig/svelte": "^5.0.4",
-        "@types/turndown": "^5.0.5",
-        "eslint": "^9.26.0",
-        "eslint-config-prettier": "^10.1.5",
-        "eslint-plugin-svelte": "^3.6.0",
-        "globals": "^16.1.0",
         "monaco-editor": "^0.52.2",
-        "prettier": "^3.5.3",
-        "prettier-plugin-svelte": "^3.3.3",
         "svelte": "^5.28.6",
         "svelte-check": "^4.1.7",
-        "tslib": "^2.8.1",
-        "typescript": "^5.8.3",
-        "typescript-eslint": "^8.32.1",
         "vite": "^6.3.5",
         "vite-plugin-monkey": "^5.0.8",
         "vite-tsconfig-paths": "^5.1.4"
     },
     "dependencies": {
-        "@joplin/turndown-plugin-gfm": "^1.0.62",
-        "@sec-ant/gm-fetch": "^1.2.3",
+        "@userscripts/utils": "workspace:*",
         "compressorjs": "^1.2.1",
         "remeda": "^2.21.5",
-        "turndown": "^7.2.0",
-        "svelte-french-toast": "^2.0.0-alpha.0"
-    },
-    "pnpm": {
-        "onlyBuiltDependencies": [
-            "esbuild"
-        ]
+        "turndown": "^7.2.0"
     }
 }

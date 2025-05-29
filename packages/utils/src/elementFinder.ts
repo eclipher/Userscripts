@@ -1,5 +1,3 @@
-import { toast } from "./toast";
-
 type FinderConfig = {
     /** The subject to watch for changes, i.e. the `target` of an Mutation Observer */
     subject: Document | Element;
@@ -54,9 +52,6 @@ export function find<T>(
         if (timeout > 0) {
             timeoutId = setTimeout(() => {
                 observer.disconnect();
-                toast.error(
-                    `${itemName} not found within timeout. Please refresh the page or disable the script.`,
-                );
                 const error = new TimeoutError(itemName, timeout);
                 console.error(error);
                 return reject(error);

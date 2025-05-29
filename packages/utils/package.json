@@ -1,5 +1,14 @@
 {
     "name": "@userscripts/utils",
-    "main": "index.ts",
-    "private": true
+    "private": true,
+    "dependencies": {
+        "@joplin/turndown-plugin-gfm": "^1.0.62",
+        "@sec-ant/gm-fetch": "^1.2.3",
+        "compressorjs": "^1.2.1",
+        "svelte-french-toast": "2.0.0-alpha.0",
+        "turndown": "^7.2.0"
+    },
+    "devDependencies": {
+        "@types/turndown": "^5.0.5"
+    }
 }

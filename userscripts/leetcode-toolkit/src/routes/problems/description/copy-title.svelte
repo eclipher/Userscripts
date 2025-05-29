@@ -1,5 +1,5 @@
 <script lang="ts" module>
-    import { simulateMouseClickReact } from "$lib/utils/click";
+    import { simulateMouseClickReact } from "@userscripts/utils/src/click";
 
     export const getTitle = async () => {
         const descriptionTabButton = (
@@ -21,8 +21,8 @@
 
 <script lang="ts">
     import Button from "$lib/components/Button.svelte";
-    import { findElement } from "$lib/utils/elementFinder";
-    import { copy } from "$lib/utils/copy";
+    import { findElement } from "@userscripts/utils/src/elementFinder";
+    import { copy } from "@userscripts/utils/src/copy";
     import { globalState } from "$lib/state";
 
     async function copyTitle() {
