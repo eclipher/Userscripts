@@ -5,7 +5,7 @@ import type {
     MultilineString,
 } from "@jupyterlab/nbformat";
 import { globalState } from "./state";
-import { downloadFile } from "@userscripts/utils/src/download-file";
+import { downloadFile } from "$utils/download-file";
 
 export function createNotebook({
     title,

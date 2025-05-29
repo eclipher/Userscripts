@@ -1,5 +1,5 @@
 <script>
-    import ButtonGroup from "$lib/components/ButtonGroup.svelte";
+    import ButtonGroup from "$components/ButtonGroup.svelte";
 
     import FindEditorialScreenshot from "./find-editorial-screenshot.svelte";
     import SaveEditorial from "./save-editorial.svelte";

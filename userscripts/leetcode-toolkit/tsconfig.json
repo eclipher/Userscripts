@@ -1,10 +1,11 @@
 {
     "extends": "../../tsconfig.json",
     "compilerOptions": {
-        "useDefineForClassFields": true,
         "baseUrl": ".",
         "paths": {
-            "$lib/*": ["src/lib/*"]
+            "$lib/*": ["src/lib/*"],
+            "$utils/*": ["../../packages/utils/src/*"],
+            "$components/*": ["../../packages/components/src/*"]
         },
         /**
          * Typecheck JS in `.svelte` and `.js` files by default.

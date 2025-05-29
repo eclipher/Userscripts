@@ -1,6 +1,6 @@
 import type { editor } from "monaco-editor";
 import { unsafeWindow } from "$";
-import { find } from "@userscripts/utils/src/elementFinder";
+import { find } from "$utils/elementFinder";
 
 interface MonacoEditorOptions extends editor.IEditorOptions {
     "bracketPairColorization.enabled": boolean;

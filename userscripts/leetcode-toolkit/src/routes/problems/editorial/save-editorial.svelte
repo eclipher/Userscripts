@@ -1,7 +1,7 @@
 <script lang="ts">
-    import Button from "$lib/components/Button.svelte";
+    import Button from "$components/Button.svelte";
     import { downloadEditorial } from "$lib/editorial-saver";
-    import { findElement } from "@userscripts/utils/src/elementFinder";
+    import { findElement } from "$utils/elementFinder";
     import { getTitle } from "../description/copy-title.svelte";
     async function findEditorial() {
         const editorialEl = await findElement<HTMLDivElement>(

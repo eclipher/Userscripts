@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Button from "$lib/components/Button.svelte";
+    import Button from "$components/Button.svelte";
     import { CONFIG } from "$lib/config";
 </script>
 

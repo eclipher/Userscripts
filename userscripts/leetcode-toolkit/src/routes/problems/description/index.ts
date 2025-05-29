@@ -1,5 +1,5 @@
 import { CONFIG } from "$lib/config";
-import { findElement } from "@userscripts/utils/src/elementFinder";
+import { findElement } from "$utils/elementFinder";
 import { toKebabCase } from "remeda";
 import { mount } from "svelte";
 import DescriptionButttons from "./DescriptionButttons.svelte";

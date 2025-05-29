@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Button from "$lib/components/Button.svelte";
+    import Button from "$components/Button.svelte";
     import { createNotebook, downloadNotebook } from "$lib/jupyter";
     import { getDescription } from "./copy-description.svelte";
     import { getTitle } from "./copy-title.svelte";

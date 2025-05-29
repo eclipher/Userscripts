@@ -1,5 +1,5 @@
 <script lang="ts" module>
-    import { simulateMouseClickReact } from "@userscripts/utils/src/click";
+    import { simulateMouseClickReact } from "$utils/click";
 
     export const getTitle = async () => {
         const descriptionTabButton = (
@@ -20,13 +20,13 @@
 </script>
 
 <script lang="ts">
-    import Button from "$lib/components/Button.svelte";
-    import { findElement } from "@userscripts/utils/src/elementFinder";
-    import { copy } from "@userscripts/utils/src/copy";
+    import Button from "$components/Button.svelte";
+    import { findElement } from "$utils/elementFinder";
+    import { copyText } from "$utils/copy";
     import { globalState } from "$lib/state";
 
     async function copyTitle() {
-        copy(await getTitle());
+        copyText(await getTitle());
     }
 </script>
 
