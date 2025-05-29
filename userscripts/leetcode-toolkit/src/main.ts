@@ -1,6 +1,6 @@
 import { mount } from "svelte";
 import "./app.css";
-import { Toaster } from "$lib/utils/toast";
+import { Toaster } from "$lib/toast";
 import { problemPage } from "./routes/problems";
 import { explorePage } from "./routes/explore";
 

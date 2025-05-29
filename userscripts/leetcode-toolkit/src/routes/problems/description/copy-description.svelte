@@ -9,9 +9,9 @@
 
 <script lang="ts">
     import Button from "$lib/components/Button.svelte";
-    import { copy } from "$lib/utils/copy";
-    import { findElement } from "$lib/utils/elementFinder";
-    import { htmlToMd } from "$lib/utils/htmlToMd";
+    import { copy } from "@userscripts/utils/src/copy";
+    import { findElement } from "@userscripts/utils/src/elementFinder";
+    import { htmlToMd } from "@userscripts/utils/src/htmlToMd";
     import { globalState } from "$lib/state";
 
     async function copyDescription() {

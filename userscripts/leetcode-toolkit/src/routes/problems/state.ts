@@ -3,7 +3,7 @@ import {
     findMonacoEditor,
     addIntellisense,
 } from "src/routes/problems/intellisense";
-import { toast } from "$lib/utils/toast";
+import { toast } from "$lib/toast";
 
 class ProblemPageState {
     editor: editor.ICodeEditor | null = null;

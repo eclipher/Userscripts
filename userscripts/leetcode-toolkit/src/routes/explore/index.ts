@@ -1,4 +1,4 @@
-import { findElement } from "$lib/utils/elementFinder";
+import { findElement } from "@userscripts/utils/src/elementFinder";
 import { mount } from "svelte";
 import ExploreButtons from "./ExploreButtons.svelte";
 

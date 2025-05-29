@@ -1,7 +1,7 @@
 <script lang="ts">
     import Button from "$lib/components/Button.svelte";
     import { getTitle } from "../description/copy-title.svelte";
-    import { toast } from "$lib/utils/toast";
+    import { toast } from "$lib/toast";
 
     import { GM_getResourceText } from "$";
     const editorialsMarkdown = GM_getResourceText("editorials");
