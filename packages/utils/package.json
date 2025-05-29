@@ -1,0 +1,5 @@
+{
+    "name": "@userscripts/utils",
+    "main": "index.ts",
+    "private": true
+}

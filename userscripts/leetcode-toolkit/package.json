@@ -1,5 +1,5 @@
 {
-    "name": "leetcode-toolkit",
+    "name": "@userscripts/leetcode-toolkit",
     "private": true,
     "version": "2.6.1",
     "type": "module",
