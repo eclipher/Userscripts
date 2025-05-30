@@ -1,48 +1,44 @@
-# Svelte + TS + Vite
+<div align="center" width="100%">
 
-This template should help get you started developing with Svelte and TypeScript in Vite.
+# 牛客网工具箱 <!-- omit from toc -->
 
-## Recommended IDE Setup
+<a href="https://greasyfork.org/scripts/537724"><img alt="Greasy Fork License" src="https://img.shields.io/greasyfork/v/537724"></a>
+![Greasy Fork License](https://img.shields.io/greasyfork/l/537724)
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+</div>
 
-## Need an official Svelte framework?
+- [特性](#特性)
+  - [在线编程/练习](#在线编程练习)
+- [关于 Jupyter Notebook](#关于-jupyter-notebook)
+- [安装](#安装)
+- [许可证](#许可证)
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+## 特性
 
-## Technical considerations
+该用户脚本通过各种调整和添加增强了[牛客网](https://www.nowcoder.com/)。
 
-**Why use this over SvelteKit?**
+### 在线编程/练习
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
-  `vite dev` and `vite build` wouldn't work in a SvelteKit environment, for example.
+- 在问题描述选项卡上，添加了以下按钮：
+    - **复制描述：** 以 Markdown 格式复制问题描述。非常适合粘贴到笔记中或咨询 AI 助手。
+    - **保存为 Jupyter Notebook:** 将问题标题、描述（Markdown）和代码编辑器的当前内容捆绑到一个 `.ipynb` 文件中。更多详情，请参阅[关于 Jupyter Notebook](#关于-jupyter-notebook) 部分。
 
-This template contains as little as possible to get started with Vite + TypeScript + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+## 关于 Jupyter Notebook
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+[Jupyter Notebook](https://jupyter-notebook.readthedocs.io/en/latest/)是一个开源 Web 应用程序，允许你创建和共享包含实时代码、公式、可视化和叙述文本的文档。
 
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
+“保存为 Jupyter Notebook” 功能可以帮助你将牛客题目转换成 Jupyter Notebook 文档，这样你就可以在本地机器上的同一处阅读题目、编写和运行解决方案、添加额外注释。
 
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
+你可以使用诸如 [VS Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks) 之类的客户端打开`.ipynb` 笔记本。默认情况下，它支持 Python，但也提供[许多其他语言的内核](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels)。
 
-**Why include `.vscode/extensions.json`?**
+## 安装
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+要使用此用户脚本，你需要一个像 [Tampermonkey](https://www.tampermonkey.net/) 这样的用户脚本管理器（适用于 Chrome、Firefox 和其他浏览器）。
 
-**Why enable `allowJs` in the TS template?**
+1. 为你的浏览器安装 Tampermonkey 或类似的用户脚本管理器。
+2. 前往 [GreasyFork 页面](https://greasyfork.org/zh-CN/scripts/532158)，点击“安装此脚本”按钮。
+3. 访问[一个牛客网练习题页面](https://www.nowcoder.com/practice/650474f313294468a4ded3ce0f7898b9)，你应该会看到此脚本添加的新功能。
 
-While `allowJs: false` would indeed prevent the use of `.js` files in the project, it does not prevent the use of JavaScript syntax in `.svelte` files. In addition, it would force `checkJs: false`, bringing the worst of both worlds: not being able to guarantee the entire codebase is TypeScript, and also having worse typechecking for the existing JavaScript. In addition, there are valid use cases in which a mixed codebase may be relevant.
+## 许可证
 
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/rixo/svelte-hmr#svelte-hmr).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```ts
-// store.ts
-// An extremely simple external store
-import { writable } from "svelte/store";
-export default writable(0);
-```
+MIT
