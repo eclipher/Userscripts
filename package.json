@@ -4,7 +4,6 @@
 		"@eslint/js": "^9.27.0",
 		"@tsconfig/svelte": "^5.0.4",
 		"eslint": "^9.27.0",
-		"eslint-config": "^0.3.0",
 		"eslint-config-prettier": "^10.1.5",
 		"eslint-plugin-svelte": "^3.9.0",
 		"globals": "^16.2.0",
