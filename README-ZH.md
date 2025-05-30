@@ -1,17 +1,24 @@
 <div align="center" width="100%">
 
-# eclipher/Userscripts
+# eclipher/Userscripts <!-- omit from toc -->
 
 [English](/README.md) | **简体中文**
 
 </div>
 
+- [用户脚本列表](#用户脚本列表)
+- [使用方法](#使用方法)
+- [开发](#开发)
+- [许可证](#许可证)
+
 这是一个 [monorepo](https://en.wikipedia.org/wiki/Monorepo)。它包含了我的用户脚本的源代码以及共享的工具和组件。
 
 ## 用户脚本列表
 
-- [LeetCode Toolkit](/userscripts/leetcode-toolkit/README.md)
+- [LeetCode 工具箱](/userscripts/leetcode-toolkit/README-ZH.md)
     - 通过各种调整和添加来增强 LeetCode。它同时支持美国版LeetCode和中国版的力扣。
+- [牛客网工具箱](userscripts/nowcoder-toolkit/README.md)
+    - 保存牛客网练习题为Markdown 或 Jupyter Notebook.
 
 ## 使用方法
 
