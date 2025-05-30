@@ -12,7 +12,6 @@
         "format": "prettier --write ."
     },
     "devDependencies": {
-        "@jupyterlab/nbformat": "^4.4.2",
         "@sveltejs/vite-plugin-svelte": "^5.0.3",
         "monaco-editor": "^0.52.2",
         "svelte": "^5.33.7",
