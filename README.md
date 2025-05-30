@@ -1,17 +1,23 @@
 <div align="center" width="100%">
 
-# eclipher/Userscripts
+# eclipher/Userscripts <!-- omit from toc -->
 
 **English** | [简体中文](/README-ZH.md)
 
 </div>
 
-This is a [monorepo](https://en.wikipedia.org/wiki/Monorepo). It hosts the source codes of my userscripts and the shared utils and components.
+- [eclipher/Userscripts](#eclipheruserscripts)
+    - [List of Userscripts](#list-of-userscripts)
+    - [Usage](#usage)
+    - [Development](#development)
+    - [License](#license)
 
 ## List of Userscripts
 
 - [LeetCode Toolkit](/userscripts/leetcode-toolkit/README.md)
     - Enhance LeetCode with various tweaking and additions. It supports both the US version of LeetCode.com, and the China version.
+- [NowCoder Toolkit](userscripts/nowcoder-toolkit/README.md)
+    - Save NowCoder.com practice problems in markdown or Jupyter Notebook.
 
 ## Usage
 

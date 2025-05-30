@@ -36,7 +36,7 @@
 要使用此用户脚本，你需要一个像 [Tampermonkey](https://www.tampermonkey.net/) 这样的用户脚本管理器（适用于 Chrome、Firefox 和其他浏览器）。
 
 1. 为你的浏览器安装 Tampermonkey 或类似的用户脚本管理器。
-2. 前往 [GreasyFork 页面](https://greasyfork.org/zh-CN/scripts/532158)，点击“安装此脚本”按钮。
+2. 前往 [GreasyFork 页面](https://greasyfork.org/zh-CN/scripts/537724)，点击“安装此脚本”按钮。
 3. 访问[一个牛客网练习题页面](https://www.nowcoder.com/practice/650474f313294468a4ded3ce0f7898b9)，你应该会看到此脚本添加的新功能。
 
 ## 许可证
