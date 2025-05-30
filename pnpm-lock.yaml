@@ -70,6 +70,9 @@ importers:
         specifier: ^7.2.0
         version: 7.2.0
     devDependencies:
+      '@jupyterlab/nbformat':
+        specifier: ^4.4.3
+        version: 4.4.3
       '@types/turndown':
         specifier: ^5.0.5
         version: 5.0.5
@@ -92,9 +95,6 @@ importers:
         specifier: ^7.2.0
         version: 7.2.0
     devDependencies:
-      '@jupyterlab/nbformat':
-        specifier: ^4.4.2
-        version: 4.4.3
       '@sveltejs/vite-plugin-svelte':
         specifier: ^5.0.3
         version: 5.0.3(svelte@5.33.7)(vite@6.3.5)
@@ -145,7 +145,7 @@ importers:
         specifier: ^6.0.5
         version: 6.3.5
       vite-plugin-monkey:
-        specifier: ^5.0.3
+        specifier: ^5.0.8
         version: 5.0.8(vite@6.3.5)
       vite-tsconfig-paths:
         specifier: ^5.1.4
