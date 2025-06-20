@@ -13,10 +13,12 @@
 <script lang="ts">
     import Button from "$components/Button.svelte";
     import { copyText } from "$utils/copy";
+    import { toaster } from "$lib/toast";
 
     export async function copyDescription() {
         const desc = await getDescription();
         copyText(desc);
+        toaster.success("已复制题目描述到剪贴板");
     }
 </script>
 

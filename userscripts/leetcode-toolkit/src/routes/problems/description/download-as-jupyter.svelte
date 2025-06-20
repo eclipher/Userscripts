@@ -1,6 +1,6 @@
 <script lang="ts">
     import Button from "$components/Button.svelte";
-    import { toast } from "$lib/toast";
+    import { toaster } from "$lib/toast";
 
     import { globalState } from "$lib/state";
     import { problemState } from "../state";
@@ -33,7 +33,7 @@
         builder.addSection(globalState.site === "cn" ? "解答" : "Solution");
         const code = problemState.editor?.getModel()?.getValue();
         if (!code) {
-            toast.error("Fail to retrieve current code in the editor");
+            toaster.error("Fail to retrieve current code in the editor");
         } else {
             builder.addCode(code);
         }
@@ -50,7 +50,7 @@
 <Button
     variant="orange"
     onclick={() => {
-        toast.promise(saveAsJupyter(), {
+        toaster.promise(saveAsJupyter(), {
             loading: "Scraping problem description and code...",
             success: "Start downloading jupyter notebook...",
             error: "Something went wrong while scraping. See browser console for more detail.",

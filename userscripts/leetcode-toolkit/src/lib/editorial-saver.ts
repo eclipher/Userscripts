@@ -4,7 +4,7 @@ import { findElement } from "$utils/elementFinder";
 import { htmlToMd, createTurndownService } from "$utils/htmlToMd";
 import { convertSrcToDataURL } from "$utils/data-url";
 
-import { toast } from "$lib/toast";
+import { toaster } from "$lib/toast";
 
 const turndown = createTurndownService();
 // remove the link before section heading in LeetCode editorials
@@ -199,8 +199,8 @@ export async function downloadEditorial(
     editorialFinder: () => Promise<HTMLDivElement>,
     titleFinder: () => Promise<string>,
 ) {
-    toast.promise(
-        (async () => {
+    toaster.promise(
+        async () => {
             const editorialEl = await editorialFinder();
             const editorial = await scrapeEditorial(editorialEl);
             const title = await titleFinder();
@@ -209,7 +209,7 @@ export async function downloadEditorial(
                 type: "text/markdown; charset=UTF-8",
             });
             downloadFile(blob, title, "md");
-        })(), // svelte-french-toast.promise() doesn't support `()=> Promise` as argument, have to use IIFE here
+        },
         {
             loading: "Scraping editorial...",
             success: "Editorial scraped. Downloading...",

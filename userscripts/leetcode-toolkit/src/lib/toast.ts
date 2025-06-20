@@ -1,5 +1,7 @@
-export { Toaster } from "$utils/toast";
-import { createToastWithPrefix } from "$utils/toast";
+import { ToastRack } from "toast-rack";
 import { CONFIG } from "./config";
 
-export const toast = createToastWithPrefix(CONFIG.APP_NAME + ": ");
+export const toaster = new ToastRack({
+    title: CONFIG.APP_NAME,
+    position: "top-center",
+});

@@ -3,7 +3,7 @@ import {
     findMonacoEditor,
     addIntellisense,
 } from "src/routes/problems/intellisense";
-import { toast } from "$lib/toast";
+import { toaster } from "$lib/toast";
 
 class ProblemPageState {
     editor: editor.ICodeEditor | null = null;
@@ -25,7 +25,7 @@ class ProblemPageState {
             } catch (err) {
                 console.error(err);
                 if (err instanceof Error) {
-                    toast.error("Failed to format code:" + err.message);
+                    toaster.error("Failed to format code:" + err.message);
                 }
             }
         });
