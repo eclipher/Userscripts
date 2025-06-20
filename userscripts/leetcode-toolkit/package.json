@@ -25,6 +25,7 @@
         "@userscripts/utils": "workspace:*",
         "compressorjs": "^1.2.1",
         "remeda": "^2.22.3",
+        "toast-rack": "^0.1.1",
         "turndown": "^7.2.0"
     }
 }

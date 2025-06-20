@@ -1,13 +1,6 @@
-import { mount } from "svelte";
-import "./app.css";
-import { Toaster } from "$lib/toast";
+import "toast-rack/style.css";
 import { problemPage } from "./routes/problems";
 import { explorePage } from "./routes/explore";
-
-mount(Toaster, {
-    target: document.body,
-    props: { position: "top-center" },
-});
 
 const url = window.location.href;
 

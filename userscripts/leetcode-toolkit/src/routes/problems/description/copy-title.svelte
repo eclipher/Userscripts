@@ -24,9 +24,15 @@
     import { findElement } from "$utils/elementFinder";
     import { copyText } from "$utils/copy";
     import { globalState } from "$lib/state";
+    import { toaster } from "$lib/toast";
 
     async function copyTitle() {
         copyText(await getTitle());
+        toaster.success(
+            globalState.site === "cn"
+                ? "已复制题目标题到剪贴板"
+                : "Problem title copied to clipboard",
+        );
     }
 </script>
 
