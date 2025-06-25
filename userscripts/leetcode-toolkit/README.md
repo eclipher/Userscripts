@@ -25,13 +25,14 @@ This userscript enhances the LeetCode with various tweaking and additions. It su
 
 ### Problem Page
 
-- On **Description** Tab, these buttons are added:
+- On **Description** Tab:
 
     - **Copy Title**: For some reason the problem title is an unclickable link, and you can't simply double click it to select the text. This button will copy the title to your clipboard.
     - **Copy Description:** Copy the problem description in Markdown format. Ideal for pasting into into your notes, or for asking an AI assistant.
     - **Save as Jupyter Notebook:** Bundles the problem title, description in Markdown, and the current code you have into a single `.ipynb` file. See [About Jupyter Notebook](#about-jupyter-notebook) section for more detail.
+    - A **difficulty rating** of the problem (if one exists) will be displayed in addition to the original difficulty, offering a more comprehensive view of the problem's complexity. The source of the ratings is [Leetcode Problem Rating Project](https://github.com/zerotrac/leetcode_problem_rating).
 
-- On **Editorial** Tab, these buttons are added:
+- On **Editorial** Tab:
 
     - **Find Screenshot(\*):** If you don't have access to an editorial, click on this button to try to find a screenshot of the editorial. If found, it will open the link to the screenshot. The source of the screenshots is [Leetcode Screenshotter](https://github.com/akhilkammila/leetcode-screenshotter).
     - **Save Editorial as Markdown(\*)**: If you _do_ have access to an editorial, click on this button and the script will scrape the editorial and download it as one single `.md` file. See [About Editorial Scraping](#about-editorial-scraping) section for more detail.
@@ -123,6 +124,7 @@ This script is inspired by the following projects:
 - [LeetCode Problem to Markdown](https://greasyfork.org/en/scripts/448601)
 - [leetcode enhanced code editor](https://greasyfork.org/en/scripts/502740-leetcode-enhanced-code-editor)
 - [Leetcode: format on save](https://greasyfork.org/en/scripts/481927-leetcode-format-on-save)
+- [leetcode-difficulty-rating-extension](https://github.com/boenshao/leetcode-difficulty-rating-extension)
 
 ## License
 

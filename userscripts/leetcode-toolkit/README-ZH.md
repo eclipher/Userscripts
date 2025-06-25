@@ -10,8 +10,8 @@
 </div>
 
 - [特性](#特性)
-    - [问题页](#问题页)
-    - [探索卡片](#探索卡片)
+  - [问题页](#问题页)
+  - [探索卡片](#探索卡片)
 - [截图](#截图)
 - [关于文章抓取](#关于文章抓取)
 - [关于 Jupyter Notebook](#关于-jupyter-notebook)
@@ -25,13 +25,14 @@
 
 ### 问题页
 
-- 在**描述**选项卡上，添加了以下按钮：
+- 在**描述**选项卡上：
 
     - **复制标题：** 不知道为什么问题标题是一个不可点击的链接，没办法直接双击它来选择文本。此按钮会将标题复制到剪贴板。
     - **复制描述：** 以 Markdown 格式复制问题描述。非常适合粘贴到笔记中或咨询 AI 助手。
     - **保存为 Jupyter Notebook:** 将标题、描述（Markdown）和代码编辑器的当前内容捆绑到一个 `.ipynb` 文件中。更多详情，请参阅[关于 Jupyter Notebook](#关于-jupyter-notebook) 部分。
+    - 在问题的原始难度旁会显示一个**难度等级分**（如果存在的话），提供问题复杂性的更全面视图。评分来源于 [Leetcode Problem Rating Project](https://github.com/zerotrac/leetcode_problem_rating)。
 
-- 在**官方题解**选项卡上，添加了以下按钮：
+- 在**官方题解**选项卡上：
 
     - **查找截图(\*)**：如果你无法访问某篇官方题解，点击此按钮尝试查找该题解的屏幕截图。如果找到，它将打开屏幕截图的链接。截图来源于 [Leetcode Screenshotter](https://github.com/akhilkammila/leetcode-screenshotter)。
     - **将官方题解保存为 Markdown(\*)**：如果你有权访问某篇官方题解，点击此按钮，脚本将抓取该并将其下载为一个 `.md` 文件。更多详情，请参阅[关于文章抓取](#关于文章抓取) 部分。
@@ -124,6 +125,7 @@ LeetCode 编辑文章包含代码、幻灯片、视频、数学表达式等。�
 - [LeetCode Problem to Markdown](https://greasyfork.org/en/scripts/448601)
 - [leetcode enhanced code editor](https://greasyfork.org/en/scripts/502740-leetcode-enhanced-code-editor)
 - [Leetcode: format on save](https://greasyfork.org/en/scripts/481927-leetcode-format-on-save)
+- [leetcode-difficulty-rating-extension](https://github.com/boenshao/leetcode-difficulty-rating-extension)
 
 ## 许可
 

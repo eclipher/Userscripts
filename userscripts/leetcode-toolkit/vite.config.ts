@@ -25,9 +25,9 @@ export default defineConfig({
                     "zh-CN": "LeetCode工具箱",
                 },
                 description: {
-                    "": "Find & Save Editorial, Copy problem as Markdown or Download as Jupyter Notebook, Format on Save, Unlock IntelliSense",
+                    "": "Find & Save Editorial, Copy problem as Markdown or Download as Jupyter Notebook, Format on Save, Unlock IntelliSense, Display Problem Ratings and more.",
                     "zh-CN":
-                        "复制题目为 Markdown | 下载为 Jupyter Notebook | 保存时自动格式化 | 免费自动补全",
+                        "复制题目为 Markdown | 下载为 Jupyter Notebook | 保存时自动格式化 | 免费自动补全 | 显示题目评分",
                 },
                 author: "eclipher",
                 // keep the old link, so userscript manager can know it's the same script and update correctly
@@ -49,6 +49,8 @@ export default defineConfig({
                 resource: {
                     editorials:
                         "https://raw.githubusercontent.com/akhilkammila/leetcode-screenshotter/refs/heads/main/ReadMe.md",
+                    ratings:
+                        "https://raw.githubusercontent.com/zerotrac/leetcode_problem_rating/refs/heads/main/ratings.txt",
                 },
                 connect: ["assets.leetcode.com", "*"],
                 grant: "GM_xmlhttpRequest",
