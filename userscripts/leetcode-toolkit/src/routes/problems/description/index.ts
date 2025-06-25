@@ -1,8 +1,9 @@
 import { CONFIG } from "$lib/config";
-import { findElement } from "$utils/elementFinder";
 import { toKebabCase } from "remeda";
+import { findElement } from "$utils/elementFinder";
 import { mount } from "svelte";
 import DescriptionButttons from "./DescriptionButttons.svelte";
+import { initRatings } from "./add-ratings";
 
 export async function initDescriptionTab() {
     // waiting indefinitely until description tab is loaded AND not hidden
@@ -28,4 +29,6 @@ export async function initDescriptionTab() {
     mount(DescriptionButttons, {
         target: buttonsContainer,
     });
+
+    initRatings();
 }
