@@ -11,7 +11,7 @@
 - [开发](#开发)
 - [许可证](#许可证)
 
-这是一个 [monorepo](https://en.wikipedia.org/wiki/Monorepo)。它包含了我的用户脚本的源代码以及共享的工具和组件。
+这是一个 [monorepo](https://en.wikipedia.org/wiki/Monorepo)。它包含了我开发的用户脚本的源代码以及相关的工具和组件。
 
 ## 用户脚本列表
 

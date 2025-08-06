@@ -6,11 +6,12 @@
 
 </div>
 
-- [eclipher/Userscripts](#eclipheruserscripts)
-    - [List of Userscripts](#list-of-userscripts)
-    - [Usage](#usage)
-    - [Development](#development)
-    - [License](#license)
+- [List of Userscripts](#list-of-userscripts)
+- [Usage](#usage)
+- [Development](#development)
+- [License](#license)
+
+This is a [monorepo](https://en.wikipedia.org/wiki/Monorepo). It contains the source code of the userscripts I developed, as well as related utils and components.
 
 ## List of Userscripts
 
