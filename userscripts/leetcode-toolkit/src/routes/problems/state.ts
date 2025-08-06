@@ -8,6 +8,12 @@ import { toaster } from "$lib/toast";
 class ProblemPageState {
     editor: editor.ICodeEditor | null = null;
 
+    /** The slug of the problem url, used for detecting whether problem has changed when url changes
+     *
+     *  E.g.  switching tabs will cause url to change, but the problem slug will remain the same.
+     */
+    slug: string | null = null;
+
     async patchMonacoEditor() {
         this.editor = await findMonacoEditor();
         this.enableFormatOnSave();
