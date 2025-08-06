@@ -10,8 +10,8 @@
 </div>
 
 - [Features](#features)
-    - [Problem Page](#problem-page)
-    - [Explore Cards](#explore-cards)
+  - [Problem Page](#problem-page)
+  - [Explore Cards](#explore-cards)
 - [Screenshots](#screenshots)
 - [About Editorial Scraping](#about-editorial-scraping)
 - [About Jupyter Notebook](#about-jupyter-notebook)
@@ -26,14 +26,12 @@ This userscript enhances the LeetCode with various tweaking and additions. It su
 ### Problem Page
 
 - On **Description** Tab:
-
     - **Copy Title**: For some reason the problem title is an unclickable link, and you can't simply double click it to select the text. This button will copy the title to your clipboard.
     - **Copy Description:** Copy the problem description in Markdown format. Ideal for pasting into into your notes, or for asking an AI assistant.
     - **Save as Jupyter Notebook:** Bundles the problem title, description in Markdown, and the current code you have into a single `.ipynb` file. See [About Jupyter Notebook](#about-jupyter-notebook) section for more detail.
-    - A **difficulty rating** of the problem (if one exists) will be displayed in addition to the original difficulty, offering a more comprehensive view of the problem's complexity. The source of the ratings is [Leetcode Problem Rating Project](https://github.com/zerotrac/leetcode_problem_rating).
+    - A **difficulty rating(\*\*)** of the problem (if one exists) will be displayed in addition to the original difficulty label, offering a more accurate evaluation than "easy" "medium" "hard" labels. The source of the ratings is [Leetcode Problem Rating Project](https://github.com/zerotrac/leetcode_problem_rating).
 
 - On **Editorial** Tab:
-
     - **Find Screenshot(\*):** If you don't have access to an editorial, click on this button to try to find a screenshot of the editorial. If found, it will open the link to the screenshot. The source of the screenshots is [Leetcode Screenshotter](https://github.com/akhilkammila/leetcode-screenshotter).
     - **Save Editorial as Markdown(\*)**: If you _do_ have access to an editorial, click on this button and the script will scrape the editorial and download it as one single `.md` file. See [About Editorial Scraping](#about-editorial-scraping) section for more detail.
 
@@ -46,6 +44,8 @@ This userscript enhances the LeetCode with various tweaking and additions. It su
 - **Save Article as Markdown(\*)**: Scrape and download an Explore Card article as markdown file. See [About Editorial Scraping](#about-editorial-scraping) section for more detail.
 
 > (\*) These features are for US site only.
+>
+> (\*\*) This feature relies on Tampermonkey's [window.onurlchange](https://www.tampermonkey.net/documentation.php#api:window.onurlchange) API. If you're using a different userscript manager that doesn't support this API, the rating may not update correctly when you navigate between problems without a full page reload.
 
 ## Screenshots
 
