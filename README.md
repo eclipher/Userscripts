@@ -2,7 +2,7 @@
 
 # eclipher/Userscripts <!-- omit from toc -->
 
-**English** | [简体中文](/README-ZH.md)
+**English** | [简体中文](./README-ZH.md)
 
 </div>
 

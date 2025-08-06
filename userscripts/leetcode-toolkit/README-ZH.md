@@ -2,7 +2,7 @@
 
 # LeetCode 工具箱 <!-- omit from toc -->
 
-[English](/README.md) | **简体中文**
+[English](./README.md) | **简体中文**
 
 <a href="https://greasyfork.org/zh-CN/scripts/532158"><img alt="Greasy Fork License" src="https://img.shields.io/greasyfork/v/532158"></a>
 ![Greasy Fork License](https://img.shields.io/greasyfork/l/532158)
