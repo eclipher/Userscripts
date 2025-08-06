@@ -3,6 +3,7 @@ import { findElement } from "$utils/elementFinder";
 
 import { CONFIG } from "$lib/config";
 import { toKebabCase } from "remeda";
+import { problemState } from "../state";
 
 /*
     format as:
@@ -17,6 +18,7 @@ const ratingsTxt = GM_getResourceText("ratings");
  *
  * @param url - The URL or Location object from which to extract the slug.
  * @returns The slug as a string, or null if the slug cannot be determined.
+ *
  * @example
  * getSlug(new URL("https://leetcode.com/problems/valid-boomerang/solutions/")); // returns "valid-boomerang"
  * getSlug(window.location); // returns the slug from the current page URL
@@ -62,6 +64,12 @@ async function getOrCreateRatingElement() {
 async function appendRating() {
     const slug = getSlug(window.location);
     if (!slug) return;
+    if (slug === problemState.slug) {
+        // No need to re-fetch if the slug hasn't changed
+        return;
+    }
+    problemState.slug = slug;
+
     const rating = getRating(slug);
     if (rating) {
         console.log("got a rating for slug", slug, ":", rating);
@@ -73,6 +81,7 @@ async function appendRating() {
 
 export function initRatings() {
     appendRating();
+    // `onurlchange` is specific to TamperMonkey
     if (monkeyWindow.onurlchange === null) {
         monkeyWindow.addEventListener("urlchange", () => {
             appendRating();
