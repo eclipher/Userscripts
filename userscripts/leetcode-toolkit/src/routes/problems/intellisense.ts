@@ -5,7 +5,8 @@ import { find } from "$utils/elementFinder";
 declare global {
     interface Window {
         // The global monaco object provided by the Monaco Editor
-        monaco: typeof import("monaco-editor");
+        // it could be undefined if the Monaco Editor is not loaded yet when the script is running
+        monaco?: typeof import("monaco-editor");
     }
 }
 interface MonacoEditorOptions extends editor.IEditorOptions {
@@ -61,7 +62,7 @@ export function addIntellisense(editor: editor.ICodeEditor): void {
 
 export async function findMonacoEditor() {
     function getEditor() {
-        return unsafeWindow.monaco.editor.getEditors().at(0);
+        return unsafeWindow.monaco?.editor.getEditors().at(0);
     }
 
     const editor = await find(getEditor, {
