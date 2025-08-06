@@ -18,7 +18,7 @@ class TimeoutError extends Error {
 
 /** Using a mutation observer to find something */
 export function find<T>(
-    finderFn: () => T | null,
+    finderFn: () => T | undefined | null,
     {
         subject = document,
         observerOption = {

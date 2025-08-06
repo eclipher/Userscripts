@@ -2,37 +2,69 @@ import type { editor } from "monaco-editor";
 import { unsafeWindow } from "$";
 import { find } from "$utils/elementFinder";
 
+declare global {
+    interface Window {
+        // The global monaco object provided by the Monaco Editor
+        monaco: typeof import("monaco-editor");
+    }
+}
 interface MonacoEditorOptions extends editor.IEditorOptions {
     "bracketPairColorization.enabled": boolean;
 }
 
-const overrideOptions: MonacoEditorOptions = {
-    selectionHighlight: true,
-    parameterHints: { enabled: true },
-    hover: { enabled: true },
-    quickSuggestions: true,
-    suggestOnTriggerCharacters: true,
-    "bracketPairColorization.enabled": true,
-};
-
 /** Add Intellisense to the monaco editor */
 export function addIntellisense(editor: editor.ICodeEditor): void {
-    const originalUpdateOptions = editor.updateOptions.bind(editor);
-    editor.updateOptions = (options: MonacoEditorOptions): void => {
-        originalUpdateOptions({
-            ...options,
-            ...overrideOptions,
-        });
+    // We can use `window.monaco.editor.getEditors()[0].getRawOptions()` to get the options that are different from default, which are set by LeetCode
+    // and here we override those changes to enable intellisense features
+    const overrideOptions: MonacoEditorOptions = {
+        "bracketPairColorization.enabled": true,
+        hover: { enabled: true },
+        parameterHints: { enabled: true },
+        quickSuggestions: true,
+        selectionHighlight: true,
+        suggest: {
+            filterGraceful: true,
+            preview: true,
+            showColors: true,
+            showConstants: true,
+            showConstructors: true,
+            showDeprecated: true,
+            showEnumMembers: true,
+            showEnums: true,
+            showEvents: true,
+            showFields: true,
+            showFiles: true,
+            showFolders: true,
+            showFunctions: true,
+            showIcons: true,
+            showInterfaces: true,
+            showIssues: true,
+            showKeywords: true,
+            showMethods: true,
+            showModules: true,
+            showOperators: true,
+            showReferences: true,
+            showSnippets: true,
+            showStatusBar: true,
+            showStructs: true,
+            showTypeParameters: true,
+            showUnits: true,
+            showUsers: true,
+            showValues: true,
+            showVariables: true,
+            showWords: true,
+        },
+        suggestOnTriggerCharacters: true,
     };
+    editor.updateOptions(overrideOptions);
 }
 
 export async function findMonacoEditor() {
-    function getEditor(): editor.ICodeEditor | null {
-        // @ts-expect-error: monaco is supplied by LeetCode site.
-        return unsafeWindow.monaco?.editor.getEditors()[0] ?? null;
+    function getEditor() {
+        return unsafeWindow.monaco.editor.getEditors().at(0);
     }
 
-    const editor = find(getEditor, {
+    const editor = await find(getEditor, {
         subject: document.head,
         observerOption: { childList: true },
         itemName: "Monaco Editor",
