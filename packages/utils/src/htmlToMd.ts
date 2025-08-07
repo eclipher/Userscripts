@@ -23,8 +23,15 @@ export function createTurndownService() {
     });
     turndown.addRule("pre", {
         filter: ["pre"],
-        replacement: (_content, node) =>
-            "\n```txt\n" + node.textContent?.trim() + "\n```\n",
+        replacement: (_content, node) => {
+            const codeClass = node.firstElementChild?.className;
+            const regex = /^language-(.+)$/;
+            const language = codeClass?.match(regex)?.at(1) ?? "txt";
+
+            return (
+                "\n```" + language + "\n" + node.textContent?.trim() + "\n```\n"
+            );
+        },
     });
     turndown.addRule("superscript", {
         filter: ["sup"],
