@@ -1,4 +1,3 @@
-import "toast-rack/style.css";
 import { problemPage } from "./routes/problems";
 import { explorePage } from "./routes/explore";
 

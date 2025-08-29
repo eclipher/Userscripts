@@ -6,9 +6,9 @@
         ".": "./src/index.ts"
     },
     "devDependencies": {
-        "svelte": "^5.33.7"
+        "svelte": "^5.38.6"
     },
     "dependencies": {
-        "remeda": "^2.22.3"
+        "remeda": "^2.30.0"
     }
 }
