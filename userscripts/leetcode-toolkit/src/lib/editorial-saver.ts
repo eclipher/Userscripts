@@ -92,7 +92,14 @@ turndown.addRule("save-code-playground", {
     filter: ["iframe"],
     replacement: (_content, node) => {
         const { src } = node as HTMLIFrameElement;
-        if (!src.includes("playground")) return ""; // skip iframe that aren't playground (videos, etc.)
+        if (!src.includes("playground")) {
+            // if the iframe is not a leetcode playground, save the link and render the iframe
+            // this won't work for video solutions, but good for other random iframes like `DB Fiddle` in SQL explore articles
+            return (
+                `<${src}>\n\n` +
+                `<iframe width='100%' height='400' src=${src}></iframe>`
+            );
+        }
         return (
             `[LeetCode Playground](${src})\n\n` +
             (playgroundCache.get(src) ?? "")
