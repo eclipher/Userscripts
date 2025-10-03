@@ -8,7 +8,7 @@ type FinderConfig = {
     itemName: string;
 };
 
-class TimeoutError extends Error {
+class FinderTimeoutError extends Error {
     name = this.constructor.name;
     constructor(item: string, timeout: number) {
         super();
@@ -52,7 +52,7 @@ export function find<T>(
         if (timeout > 0) {
             timeoutId = setTimeout(() => {
                 observer.disconnect();
-                const error = new TimeoutError(itemName, timeout);
+                const error = new FinderTimeoutError(itemName, timeout);
                 console.error(error);
                 return reject(error);
             }, timeout);
@@ -60,13 +60,16 @@ export function find<T>(
     });
 }
 
+/** Find an element using CSS Selector or XPath Expression */
 export async function findElement<T extends Element>(
     selector: string,
     {
+        finderType = "css",
         parent = document,
         timeout = 500,
         additionalRule,
     }: {
+        finderType?: "css" | "xpath";
         parent?: Document | Element;
         timeout?: number;
         additionalRule?: (el: T) => boolean;
@@ -74,7 +77,17 @@ export async function findElement<T extends Element>(
 ): Promise<T> {
     const element = await find<T>(
         () => {
-            const el = parent.querySelector<T>(selector);
+            const el =
+                finderType === "css"
+                    ? parent.querySelector<T>(selector)
+                    : (document.evaluate(
+                          selector,
+                          parent,
+                          null,
+                          XPathResult.FIRST_ORDERED_NODE_TYPE,
+                          null,
+                      ).singleNodeValue as T | null);
+
             if (additionalRule && el) {
                 // if the found element does not meet the rule,
                 // return `null` so the finder will proceed as if not found
