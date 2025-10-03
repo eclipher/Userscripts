@@ -19,10 +19,12 @@ if `onclick` handler is async, the button will display a loader icon until the p
         variant = "purple",
         type = "button",
         href,
+        ref = $bindable(null),
         ...restProps
     }: HTMLButtonAttributes &
         HTMLAnchorAttributes & {
             variant?: keyof typeof variants;
+            ref?: HTMLButtonElement | HTMLAnchorElement | null;
         } = $props();
 
     const variants = {
@@ -47,11 +49,18 @@ if `onclick` handler is async, the button will display a loader icon until the p
 </script>
 
 {#if href}
-    <a style={variants[variant]} {href} target="_blank" {...restProps}>
+    <a
+        bind:this={ref}
+        style={variants[variant]}
+        {href}
+        target="_blank"
+        {...restProps}
+    >
         {@render children?.()}
     </a>
 {:else}
     <button
+        bind:this={ref}
         style={variants[variant]}
         {type}
         disabled={loading}
